@@ -1,0 +1,51 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Add Product
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add new product</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body container" >
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+          <input class="btn btn-primary" type="submit" name="Add" >
+<!--            <input type="submit" name="Add" style="background-color:blue;color: white;">-->
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+<!--      <div class="modal-footer">-->
+<!--        <input class="btn btn-primary" type="submit" name="Add" >-->
+
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--        <form action="" method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            {{form}}-->
+<!--            <input type="submit" name="Add">-->
+
+<!--        </form>-->
+
+{% endblock %}

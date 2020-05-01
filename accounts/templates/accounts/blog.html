@@ -1,0 +1,65 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<title>MB|blog</title>
+   <h2>Happy blogging {{user}} :)</h2>
+   <br>
+   <form action="" method="POST">
+       {% csrf_token %}
+    {{form}}
+       <input type="submit" name="Post">
+
+   </form>
+   <br>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h1 style="background-color: #4C832C;text-align: center;">Blog Information </h1>
+
+<table>
+  <tr>
+    <th>S.no</th>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Content</th>
+    <th>Author</th>
+    <th>Action</th>
+  </tr>
+    {% for posts in post %}
+           <tr>
+               <td>{{posts.sno}}</td>
+               <td><a href="#">{{posts.title}}</a></td>
+               <td>{{posts.category}}</td>
+               <td>{{posts.content}}</td>
+               <td>{{posts.author}}</td>
+               <td><a class="btn btn-sm btn-danger" href="{% url 'delete_blog' %}">Delete</a></td>
+               <td><a class="btn btn-sm btn-primary" href="{#}">Edit</a></td>
+           </tr>
+           {% endfor %}
+</table>
+
+</body>
+</html>
+
+{% endblock %}

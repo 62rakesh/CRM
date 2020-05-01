@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+<h5>Do you really want to delete this event ?</h5>
+           <br>
+           <form action="{% url 'delete_event' %}" method="POST">
+               {% csrf_token %}
+
+               <button class="btn btn-danger"><a href="{% url 'event' %}" style="color:white;">Cancel</a></button>
+               <input type="submit" class="btn btn-info" name="Delete">
+           </form>
+
+
+{% endblock %}

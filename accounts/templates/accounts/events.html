@@ -1,0 +1,53 @@
+{% extends 'accounts/main.html' %}
+{% block content%}
+    <br>
+        <div class="row">
+            <div class="col">
+                <div class="col-md">
+                    <div class="card text-center text-black mb-3" id="Event Details">
+                        <div class="card-header">
+                            <h5 style="background-color: #4C832C;">Event Details</h5>
+                            <table class="table table-sm">
+                                <tr>
+                                    <th>EventCategory</th>
+                                    <th>EventName</th>
+                                    <th>Details</th>
+                                </tr>
+                                 {% for events in event1 %}
+                                <tr>
+                                    <td>{{events.event_category}}</td>
+                                    <td>{{events.event_name}}</td>
+                                    <td>{{events.details}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+                <div class="col-md">
+                    <div class="card text-center text-black mb-3" id="Create Event">
+                        <div class="card-header">
+                            <h5 style="background-color: #4C832C;">Create Event</h5>
+                            <table class="table table-sm">
+
+                                <tr>
+                                    <td><a class="btn btn-sm btn-info" href="{% url 'add_event' %}">Add Event</a></td>
+                                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_event' %}">Delete Event</a></td>
+                                    <td><a style="background-color: yellow;" class="btn btn-sm " href="{% url 'update_event' %}">Update Event</a></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+{% endblock %}
+

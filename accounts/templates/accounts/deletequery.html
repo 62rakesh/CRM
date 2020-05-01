@@ -1,0 +1,12 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+              <br>
+<h5>Do you really want to delete this query raised by {{first_name}}?</h5>
+<form action="{% url 'delete_query' %}" method="POST">
+    {% csrf_token %}
+    <button><a href="{% url 'contactus' %}">Cancel</a></button>
+    <input type="submit" name="submit">
+
+</form>
+
+{% endblock %}

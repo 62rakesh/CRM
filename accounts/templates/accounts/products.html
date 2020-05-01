@@ -1,0 +1,61 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+        <br>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="card-body">
+                <form method="GET">
+                    {{prodFilter.form}}
+                    <button class="btn btn-primary" type="submit" > Search </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>PRODUCTS <a class="btn btn-sm btn-info" href="{% url 'add_product' %}" onclick="">Add product</a></h5>
+            </div>
+            <div class="card card-body">
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Update product</th>
+                        <th>Delete product</th>
+                    </tr>
+
+                     {% for product in products %}
+
+                    <tr>
+                        <td>{{product.product_name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.description}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'update_product' product.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_product' product.id %}">Delete</a></td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock content  %}

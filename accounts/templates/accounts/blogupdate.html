@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+     <p>Do you want to update this blog !</p>
+        <br>
+     <form action="" method="POST">
+         {% csrf_token %}
+         {{form}}
+         <button><a href="{% url 'blog' %}">Cancel</a></button>
+         <input type="submit" name="submit">
+     </form>
+
+{% endblock %}

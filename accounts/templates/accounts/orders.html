@@ -1,0 +1,55 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+       <br>
+    <div class="row">
+            <div class="col col-md-6">
+                <div class="card card-body">
+                    <a class="btn btn-primary btn-sm btn-block"><h5 class="text-center" style="center">Delivered product history</h5></a>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Product</th>
+                            <th>Delivery Address</th>
+                            <th>Customer name</th>
+                            <th>Delivery date</th>
+                        </tr>
+                        {% for order in order_delivered %}
+                        <tr>
+                            <td>{{order.Products}}</td>
+                            <td>{{order.address}}</td>
+                            <td>{{order.customer}}</td>
+                            <td>{{order.date_created}}</td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="card card-body">
+                    <a class="btn btn-primary btn-sm btn-block"><h5 class="text-center" style="center">Pending product history</h5></a>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Product</th>
+                            <th>Delivery Address</th>
+                            <th>Customer name</th>
+                            <th>Estimated delivery date</th>
+                        </tr>
+                        {% for order in pending_order %}
+                        <tr>
+                            <td>{{order.Products}}</td>
+                            <td>{{order.address}}</td>
+                            <td>{{order.customer}}</td>
+                            <td>{{order.date_created}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+
+            </div>
+
+    </div>
+
+{% endblock %}

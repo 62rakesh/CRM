@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+      <h2>Do you really want to delete this blog ?</h2>
+          <br>
+     <form action="{% url 'delete_blog' %}" method="POST">
+         {% csrf_token %}
+
+         <a href="{% url 'blog' %}">Cancel</a>
+         <input type="submit" name="submit">
+     </form>
+
+
+{% endblock %}

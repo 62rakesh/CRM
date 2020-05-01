@@ -1,0 +1,131 @@
+{% load static %}
+
+<!--<link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">-->
+
+<!--<h3>Hello Python!</h3>-->
+
+<!--<img src="{% static 'images/icon.jpg'  %}">-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRM|Portfolio</title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    body {
+     background-color:#D2E7E6important;
+}
+
+#profile-wrapper{
+         text-align: center;
+}
+
+#profile-pic{
+        width:200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+}
+ul{
+  padding: 0;
+  list-style-type: none;
+}
+.social-links ul,li{
+       list-style-type:none;
+       display:inline-block;
+}
+.social{
+     height: 20px;
+     width : 20px;
+}
+</style>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-body h-100" id="profile-wrapper">
+                    <img id="profile-pic" src="{% static 'img/icon.jpg'  %}">
+                    <hr>
+                    <h4>Hi I'm Rakesh!</h4>
+                    <p>I love coding,doing research and collaborating.</p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card card-body h-100">
+                    <h4>My First Job as a Developer.</h4>
+                    <hr>
+                    <p>3 months after writing my first " Hello World " program on jan 1st 2019 (While working in the QA
+                    department) I had convinced my boss to let me take a stab at building a better version of the
+                    outdated CRM project that my company was working on.</p>
+
+                    <p>Before I know it we transitioned from the old system and we are on to mine.My newbie self was
+                    now in charge of hosting hundreds of on field shopkeepers and thousands of clients. </p>
+
+                    <p>From this you will see I am someone that jumps before I can talk myself out of doing something
+                    scary.</p>
+
+                    <ul class="social-links">
+                        <li><img class="social" src="{% static 'img/whatsapp.png' %}"></li>
+                        <li><img class="social" src="{% static 'img/linkedin.png' %}"></li>
+                        <li><img class="social" src="{% static 'img/facebook.png' %}"></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body h-100">
+                    <h5>My Experience as a Developer!</h5>
+                    <hr>
+                    <p>Python Developer at Devoint IT Solutions.</p>
+                    <p>Designed,built and managed a CRM based product that interact with thousands of daily shopkeepers
+                    and also provide a practical idea about the customer management handling to thousands of upfront
+                    clients.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-body h-100">
+                    <h5>What I Know!</h5>
+                    <hr>
+                    <p>Python,Djnago,HTML,CSS,Bootstarp,SQL,POSTGRE,SELENIUM Webdriver,QA and APIs such as google maps,
+                    Jmeter,Postman and whole bunch more I cant't possibly mention in one sentence ;) </p>
+                    <p>Working on WebScraping,Data science and Machine Learning. </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body h-100">
+                    <h5>How I Learn!</h5>
+                    <hr>
+                    <p>Reverse enginerr and build ugly prototype first.</p>
+                    <p>I can learn just about anything by having a final product to tear apart piece by piece.I break the
+                    code where I need to figure out things work the way they do.Documentation is just a reference.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-body h-100">
+                    <h5>My Short Term Goals!</h5>
+                    <hr>
+                    <p>After almost 1 year of supporting my internal product I'm ready to learn something new.I'll
+                    collaborating and sharing my experience with others and also keep working hard to grow in a way
+                    where I can learn new things and add value to this amazing industry.</p>
+                    <p>Aside from building small projects I would love to enter a position where I can be part of a
+                    bigger team & learn from others with more experience than myself.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+
+</body>
+</html>

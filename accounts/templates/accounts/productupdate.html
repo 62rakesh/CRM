@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+<h5>Update product "{{product}}"</h5>
+        <br>
+        <form action="{% url 'update_product' product.id %}" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button><a  href="#">Cancel</a></button>
+            <input type="submit" name="SUBMIT">
+
+        </form>
+
+{% endblock %}

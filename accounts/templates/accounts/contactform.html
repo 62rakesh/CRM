@@ -1,0 +1,40 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+                 <br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" name="name">
+
+            </form>
+
+           <br>
+            <div class="row">
+            <div class="col">
+                <div class="col-md">
+                    <div class="card text-center text-black mb-3" id="Event Details">
+                        <div class="card-header">
+                            <h5 style="background-color: #4C832C;">Query Details</h5>
+                            <table class="table table-sm">
+                                <tr>
+                                    <th>User name</th>
+                                    <th>Email address</th>
+                                    <th>Phone no</th>
+                                    <th>Query</th>
+                                </tr>
+                                 {% for contact in contact1 %}
+                                <tr>
+                                    <td>{{contact.first_name}}</td>
+                                    <td>{{contact.email_address}}</td>
+                                    <td>{{contact.phone_number}}</td>
+                                    <td>{{contact.query}}</td>
+                                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_query' %}">Delete</a></td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
